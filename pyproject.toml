@@ -12,9 +12,9 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
+    "pytest>=8",
     "pytest-cov",
-    "ruff",
+    "ruff>=0.6,>0.7",
 ]
 
 [tool.pytest.ini_options]
