@@ -64,14 +64,27 @@ POST /projects/1/runs     (body: report.xml)
 The XML is just text. A **parser** reads it and turns it into objects that the rest of the code understands:
 
 ```python
-TestRun(results=[
-    TestResult(suite="tests.test_login", name="test_valid_login",
-               status=Status.PASSED, duration_ms=120),
-    TestResult(suite="tests.test_login", name="test_wrong_password",
-               status=Status.FAILED, duration_ms=300, message="assert 401 == 403"),
-    TestResult(suite="tests.test_login", name="test_sso",
-               status=Status.SKIPPED, duration_ms=0, message="SSO not configured"),
-])
+TestRun(
+    results=[
+        TestResult(
+            suite="tests.test_login", name="test_valid_login", status=Status.PASSED, duration_ms=120
+        ),
+        TestResult(
+            suite="tests.test_login",
+            name="test_wrong_password",
+            status=Status.FAILED,
+            duration_ms=300,
+            message="assert 401 == 403",
+        ),
+        TestResult(
+            suite="tests.test_login",
+            name="test_sso",
+            status=Status.SKIPPED,
+            duration_ms=0,
+            message="SSO not configured",
+        ),
+    ]
+)
 ```
 
 → the parser lives in **`parsers/`**, and `TestRun`, `TestResult` and `Status` live in **`domain/`**
