@@ -10,4 +10,4 @@ class TestResult:
 
 @dataclass
 class TestRun:
-    results:
+    pass
