@@ -7,7 +7,6 @@ class Status(Enum):
     FAILED = "failed"
     SKIPPED = "skipped"
     ERROR = "error"
-    
 
 
 @dataclass(frozen=True)
