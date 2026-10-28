@@ -8,6 +8,7 @@ class Status(Enum):
     SKIPPED = "skipped"
     ERROR = "error"
 
+
 @dataclass(frozen=True)
 class TestResult:
     pass
