@@ -3,8 +3,10 @@ from enum import Enum
 
 
 class Status(Enum):
-    pass
-
+    PASSED = "passed"
+    FAILED = "failed"
+    SKIPPED = "skipped"
+    ERROR = "error"
 
 @dataclass(frozen=True)
 class TestResult:
