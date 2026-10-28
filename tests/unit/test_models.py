@@ -1,14 +1,16 @@
-from testpulse.domain.models import Status
 import pytest
+from testpulse.domain.models import Status
 
 
 @pytest.mark.parametrize(
     ("raw_value", "expected_value"),
     [
-        ("passed", Status.PASSED)("failed", Status.FAILED)("skipped", Status.SKIPPED)(
-            "error", Status.ERROR
-        )
+        ("passed", Status.PASSED),
+        ("failed", Status.FAILED),
+        ("skipped", Status.SKIPPED),
+        ("error", Status.ERROR),
+        ("pased", Status.ERROR),
     ],
 )
-def test_status_class(raw_value, expected_value):
-    assert Status("raw_value") is expected_value
+def test_status_can_be_created_from_value(raw_value, expected_value):
+    assert Status(raw_value) is expected_value
